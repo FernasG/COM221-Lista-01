@@ -6,14 +6,14 @@ import com.opencsv.bean.CsvToBeanBuilder;
 
 import java.io.Reader;
 import java.util.List;
-import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.io.IOException;
 import java.nio.file.Files;
 
 public class CSVReader {
     public static List<Games> readCSV(String path) {
         try {
-            Reader reader = Files.newBufferedReader(Path.of(path));
+            Reader reader = Files.newBufferedReader(Paths.get(path).toAbsolutePath());
             CsvToBean<Games> csvToBean = new CsvToBeanBuilder<Games>(reader)
                     .withType(Games.class)
                     .withIgnoreLeadingWhiteSpace(true)
