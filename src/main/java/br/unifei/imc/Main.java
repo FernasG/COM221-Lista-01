@@ -13,7 +13,7 @@ public class Main {
         List<Games> games = CSVReader.readCSV("src/main/java/br/unifei/imc/games.csv");
 
         List<Games> gamesByPlatform = gamesService.filterGamesByPlatform(games, Platforms.N64);
-        List<Games> gamesByPublishers = gamesService.filterGamesByPublishers(games, Publishers.Ubisoft);
+        List<Games> gamesByPublishers = gamesService.filterGamesByPublishers(games, Publishers.ElectronicArts);
 
         System.out.println("Platform:");
         for (Games game: gamesByPlatform) {
